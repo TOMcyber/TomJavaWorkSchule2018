@@ -6,7 +6,7 @@ public class UebungsWorkspace {
 		// === WORKSPACE für allgemeine Übungen
 		
 		
-		System.out.println();
+		
 
 	}
 
