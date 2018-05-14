@@ -1,9 +1,9 @@
-package comparableInterfaceBasics;
+package schuleAufgaben052018;
 
 import java.util.Arrays;
 
-public class ComparableIFMitObjektinstanzen {
-
+public class AufgabenW4T1c {
+	
 	public static void main(String[] args) {
 		// ===
 		Schiff[] schiffe = new Schiff[5];
