@@ -9,7 +9,7 @@ public class TryCatchFinalKontrollkonstroktion {
 		
 		try {
 			x.equals("irgenwas");
-			System.out.println("wichtige Operation);"
+			System.out.println("wichtige Operation");
 		} catch (NullPointerException npe)  {
 			
 		

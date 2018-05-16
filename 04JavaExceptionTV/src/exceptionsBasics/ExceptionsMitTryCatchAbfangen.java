@@ -9,11 +9,11 @@ public class ExceptionsMitTryCatchAbfangen {
 		
 		// NullPointerException abfangen
 		
-		String[] strinA
+		String[] stringA;
 		
 		try {
 		boolean b = x.equals("Banane");
-		strinA
+//		stringA;
 		// --> hier wird NullPointerException geworfen
 		} catch(Exception npe) {
 			System.out.println("Exception wurde geworfen");
