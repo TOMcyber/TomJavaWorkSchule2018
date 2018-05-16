@@ -42,22 +42,28 @@ public class ArrayListBasics {
 		// Länge der Liste über .size() Methode (entspricht length bei Arrays)
 		for (int i=0; i < alist.size(); i++ )
 			System.out.println(i + "" +alist.get(i) );
-	}
 		
+		
+		List<Integer> mylist = new ArrayList<>();
+		mylist.add(5);
+		mylist.add(45);
+		mylist.add(3);
+		mylist.add(4);
+		
+		
+		List<Person> personen = new ArrayList<>();
+		boolean gefunden = mylist.contains(Integer.valueOf(44));
+		System.out.println("person gefunden? " + personen.contains(new);
+		
+		
+	} // main hört hier auf
+	
+}
 	//	System.out.println("=== Ausgabe der Inhalte mit ")
 
 	// === Element in einer List suchen
 
-	List<Integer> mylist = new ArrayList<>();
-	mylist.add(5);
-	mylist.add(45);
-	mylist.add(3);
-	mylist.add(4);
-	
-	
-	List<Person> personen = new ArrayList<>();
-	boolean gefunden = mylist.contains(Integer.valueOf(44));
-	System.out.println("person gefunden? " + personen.contains(new);
+	Person new ()=                                                                                                                                                         {
 
 	@Override
 	public boolean equals(Object obj) {

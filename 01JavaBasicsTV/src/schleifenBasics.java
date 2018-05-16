@@ -9,17 +9,17 @@ public class schleifenBasics {
 		
 		int j;
 		for (int i = 0; i < 10; i++) {
-			System.out.println("j2 =" + i);
+			System.out.println("j =" + i);
 			
 	//		innere Schleife;
-			for (int j2 =0; i < 5; j2++); {
+			for (int j =0; i < 5; j++); {
 				
-				if (j2==1) {
+				if (j==1) {
 					continue;
 				}
-				System.out.println("j2 = " + i + "." + j2);
+				System.out.println("j = " + i + "." + j);
 				
-				if (j2==2)  {
+				if (j==2)  {
 					break aeußereSchleife;
 				}
 			}
