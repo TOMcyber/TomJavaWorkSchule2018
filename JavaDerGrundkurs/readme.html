@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="readme.css" type="text/css" />
+</head>
+<body>
+<h1 id="beispieldateien-zum-buch-java----der-grundkurs-2.-auflage">Beispieldateien zum Buch »Java -- Der Grundkurs«, 2. Auflage</h1>
+<p>Copyright 2017/2018 Michael Kofler + Rheinwerk Verlag</p>
+<p><a href="https://kofler.info/buecher/java-der-grundkurs/" class="uri">https://kofler.info/buecher/java-der-grundkurs/</a></p>
+<p><a href="https://www.rheinwerk-verlag.de/4397" class="uri">https://www.rheinwerk-verlag.de/4397</a></p>
+<p>Die Beispieldateien sind urheberrechtlich geschützt. Sie sind nur für die persönliche Nutzung gedacht. Sie dürfen nicht weitergegeben oder für Schulungen etc. verwendet werden.</p>
+<p>Alle Beispieldateien liegen doppelt vor:</p>
+<ul>
+<li><p>Das Verzeichnis <code>intellij</code> enthält alle Beispiel in Form von Projekten der Entwicklungsumgebung IntelliJ IDEA.</p></li>
+<li><p>Das Verzeichnis <code>beispiele</code> enthält die Beispiele als Einzeldateien, die direkt mit <code>javac</code> kompiliert und mit <code>java</code> ausgeführt werden können.</p></li>
+</ul>
+<p>Sollten Sie unter Windows oder Linux arbeiten, ignorieren Sie bitte das Verzeichnis <code>__MACOSX</code> und die Dateien <code>.DS_Store</code>.</p>
+<h2 id="beispieldateien-mit-intellij-nutzen">Beispieldateien mit IntelliJ nutzen</h2>
+<p>Starten Sie IntelliJ, führen Sie im Startdialog <em>Open</em> bzw. im Hauptmenü <em>File/Open</em> aus und wählen Sie das Verzeichnis mit dem gewünschten Beispiel aus, z.B. <code>intellij/kap10-rechteck</code>.</p>
+<h2 id="beispieldateien-ohne-intellij-nutzen">Beispieldateien ohne IntelliJ nutzen</h2>
+<p>Das Verzeichnis <code>beispiele</code> enthält die <code>*.java</code>-Dateien aller Beispiele, wobei jedes Beispiel in einem eigenen Verzeichnis gespeichert ist. Der Quellcode ist mit den Eclipse-Dateien identisch, es fehlen nur die Eclipse-Metadateien.</p>
+<p>Um ein Beispiel auszuprobieren, wechseln Sie in das entsprechende Verzeichnis, kompilieren das Programm und führen es aus, z.B. so:</p>
+<pre><code>cd beispiele/kap10-rechteck
+javac Rechteck.java
+java Rechteck</code></pre>
+<p>Da die Beispieldateien den Zeichensatz UTF-8 verwenden, müssen Sie unter Windows beim Kompilieren die Option <code>-encoding utf-8</code> angeben (siehe auch S. 149):</p>
+<pre><code>cd beispiele\kap10-rechteck
+javac -encoding utf-8 Rechteck.java
+java Rechteck</code></pre>
+</body>
+</html>

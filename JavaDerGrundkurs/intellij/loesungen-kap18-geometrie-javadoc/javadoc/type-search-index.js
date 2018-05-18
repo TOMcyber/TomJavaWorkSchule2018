@@ -1,0 +1,1 @@
+typeSearchIndex = [{"p":"<Unnamed>","l":"Geometrie"},{"p":"<Unnamed>","l":"Kreis"},{"p":"<Unnamed>","l":"Rechteck"},{"p":"<Unnamed>","l":"TestGeometrie"}]

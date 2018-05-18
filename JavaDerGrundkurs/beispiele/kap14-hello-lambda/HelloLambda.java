@@ -1,0 +1,20 @@
+import java.util.Arrays;
+import java.util.function.Consumer;
+
+public class HelloLambda {
+  public static void main(String[] args) {
+    String[] ar = {"Hello ", "Lambda ", "World!"};
+    Arrays.asList(ar).forEach(s->System.out.print(s));
+    System.out.println();
+    
+    // alternativ mit anonymer Klasse
+    Arrays.asList(ar).forEach(
+        new Consumer<String>() {
+          public void accept(String t) {
+            System.out.print(t);
+          }
+        }
+      );
+    System.out.println();
+  } 
+}
