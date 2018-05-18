@@ -23,7 +23,8 @@ public class AufgabenW3T1d {
 			Name
 			String s1 = new String("text");
 			
-			Hantel[ hanteln = { new Hantel(19), new Hantel(11), new SpecialHantel() };
+			
+			Hantel[] hanteln = { new Hantel(19), new Hantel(11), new SpecialHantel() };
 			
 			Object[] objekte = { new Hantel(11), new Hantel(11), new Hantel(10) };
 		}

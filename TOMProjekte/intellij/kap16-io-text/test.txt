@@ -1,0 +1,6 @@
+2017-10-07T14:26:32.844318800
+Hello BufferedWriter!
+äöü
+Noch
+mehr
+Text.
