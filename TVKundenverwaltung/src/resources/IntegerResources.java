@@ -22,8 +22,15 @@ public final class IntegerResources {
 
 	public static final int	BDAY_TEXT_FIELD_COLUMNS		= 8;
 
-	public static final int	DEFAULT_WINDOW_HEIGHT		= 150;
-	public static final int	DEFAULT_WINDOW_WIDTH		= 300;
+	public static final int	DEFAULT_WINDOW_HEIGHT		= 500;
+	public static final int	DEFAULT_WINDOW_WIDTH		= 600;
+
+	public static final int MAIN_WINDOW_LAYOUT_COLUMNS = 1;
+
+	public static final int MAIN_WINDOW_LAYOUT_ROWS = 0;
+
+	public static final int DEFAULT_UI_LIST_SIZE = 2;
+	
 
 	private IntegerResources() {
 		//

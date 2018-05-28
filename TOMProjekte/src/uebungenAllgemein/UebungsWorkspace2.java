@@ -2,9 +2,9 @@ package uebungenAllgemein;
 
 import java.util.Scanner;
 
-public class UebungsWorkspace2 {
+//public class UebungsWorkspace2 {
 
-	public static void main(String[] args) {
+//	public static void main(String[] args) {
 		// UWS2
 
 	    import java.util.Scanner;
@@ -21,12 +21,11 @@ public class UebungsWorkspace2 {
 	            
 	            System.out.println("Welcome, " + firstName + " " + lastName);
 	        }  
-	    }
-		
-		
+	   
+	
 		
 		
 		
 	}
-
-}
+	
+//}
