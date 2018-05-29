@@ -12,35 +12,54 @@ import helper.DateHelper;
 import models.Customer;
 import resources.TextResources;
 
-public class GuiCustomerAdministrationActionListener implements ActionListener {
+/**
+ * Nimmt die Actions(Klicks) der Klasse {@link GuiCustomerAdministration}
+ * entgegen und leitet die weitere Logik ein.
+ * 
+ * @author Alfa-Dozent
+ *
+ */
+
+public class GuiCustomerAdministrationActionListener implements ActionListener { // hier lauscht er aus Schüssel
+
+	/**
+	 * Enumartion zum unterscheiden welche LoggingMessage rausgeschrieben wird
+	 * 
+	 * @author Alfa-Dozent
+	 *
+	 */
+	private enum ECustomerActions {
+		SAVE_CUSTOMER, EDIT_CUSTOMER, DELETE_CUSTOMER;
+	}
+
+	// region 0 . Konstanten
+	private static final int			EDIT_MODE_OFF				= -1;
+	private static final int			NO_UI_LIST_SELECTION_VALUE	= -1;
+	// endregion
 
 	// region 1 Decl. and Init Attribute
-	private GuiCustomerAdminstration	guiCustomerAdminstration;
+	private GuiCustomerAdminstration	guiCustomerAdministration;
 
 	private List<Customer>				customerList;
+
+	private int							indexOfCustomerToEdit;
 	// endregion
 
 	// regin 2. Konstruktor
 	public GuiCustomerAdministrationActionListener(GuiCustomerAdminstration guiCustomerAdministartion) {
-		System.out.println("Klasse GuiCustomerAdministrationActionListener - Konstruktor()");
-		this.guiCustomerAdminstration = guiCustomerAdministartion;
+		System.out.println("Klasse GuiCustomerAdministrationActionListener - Konstruktor()"); // SR
+		this.guiCustomerAdministration = guiCustomerAdministartion;
 
-		// TODO 5. Liste aus Datei per FileHandler auslesen
-		List<Customer> customersFromCsvFile = FileHandler.getInstance().loadCustomerListFromCsvFile();
+		this.indexOfCustomerToEdit = EDIT_MODE_OFF;
 
-		// TODO 6. Zuweisen des Attributes customerList oder neu geneirerung
-		if ((!customersFromCsvFile.isEmpty()) && (customersFromCsvFile != null)) {
-			this.customerList = customersFromCsvFile;
-		} else {
-			this.customerList = new ArrayList<>();
-		}
+		updateUiCustomerLists();
 	}
 	// endregion
 
 	// region 3. Action Listener
 	@Override
-	public void actionPerformed(ActionEvent e) {
-		System.out.println("Klasse GuiCustomerAdministrationActionListener - Methode actionPerformed()");
+	public void actionPerformed(ActionEvent e) { // Methode actionPerformed
+		System.out.println("Klasse GuiCustomerAdministrationActionListener - Methode actionPerformed()"); // SR
 
 		if (e.getActionCommand().equalsIgnoreCase(TextResources.ACTION_COMMAND_SAVE_CUSTOMER)) {
 
@@ -48,25 +67,65 @@ public class GuiCustomerAdministrationActionListener implements ActionListener {
 
 			if (customer != null) {
 
-				customerList.add(customer);
+				if (indexOfCustomerToEdit > EDIT_MODE_OFF) {
+					// Update der Liste
+					customerList.set(indexOfCustomerToEdit, customer);
+
+					logCustomerActionMessage(customer, ECustomerActions.EDIT_CUSTOMER);
+
+					indexOfCustomerToEdit = EDIT_MODE_OFF;
+
+					JOptionPane.showMessageDialog(null, TextResources.USER_MSG_UPDATED_CUSTOMER_SUCCESSFULLY,
+							TextResources.SAVED_TEXT, JOptionPane.INFORMATION_MESSAGE);
+
+				} else {
+
+					customerList.add(customer);
+
+					// Logging
+					String logMessage = DateHelper.getCurrentTimeStamp();
+					logMessage += " Customer saved: ";
+					logMessage += customer.getFirstName() + " ";
+					logMessage += customer.getLastName() + "\n";
+
+					FileHandler.getInstance().logTextFile(logMessage);
+
+					JOptionPane.showMessageDialog(null, TextResources.USER_MSG_SAVED_CUSTOMER_SUCCESSFULLY,
+							TextResources.SAVED_TEXT, JOptionPane.INFORMATION_MESSAGE);
+				}
 
 				FileHandler.getInstance().saveCustomerListInCsvFile(customerList);
-
-				// Logging
-				String logMessage = DateHelper.getCurrentTimeStamp();
-				logMessage += " Customer saved: ";
-				logMessage += customer.getFirstName() + " ";
-				logMessage += customer.getLastName() + "\n";
-
-				FileHandler.getInstance().logTextFile(logMessage);
-
-				JOptionPane.showMessageDialog(null, TextResources.USER_MSG_SAVED_CUSTOMER_SUCCESSFULLY,
-						TextResources.SAVED_TEXT, JOptionPane.INFORMATION_MESSAGE);
+				
+				clearTextFields();
+				
+				updateUiCustomerLists();
+				
 			} else {
 				JOptionPane.showMessageDialog(null, TextResources.USER_MSG_FILL_IN_CUSTOMER_DATA,
 						TextResources.FILL_IN_TEXT, JOptionPane.INFORMATION_MESSAGE);
 
 			}
+
+		}
+
+		if (e.getActionCommand().equalsIgnoreCase(TextResources.ACTION_COMMAND_EDIT)) {
+			this.indexOfCustomerToEdit = this.guiCustomerAdministration.getUiCustomerList().getSelectedIndex();
+			Customer selectedCustomer = this.customerList.get(indexOfCustomerToEdit);
+
+			this.guiCustomerAdministration.getTxtCustomerFirstName().setText(selectedCustomer.getFirstName());
+			this.guiCustomerAdministration.getTxtCustomerLastName().setText(selectedCustomer.getLastName());
+			//
+			this.guiCustomerAdministration.getTxtCustomerBday().setText(selectedCustomer.getBday());
+			this.guiCustomerAdministration.getTxtStreet().setText(selectedCustomer.getStreet());
+			this.guiCustomerAdministration.getTxtHouseNumber().setText(selectedCustomer.getHouseNumber());
+			this.guiCustomerAdministration.getTxtZip().setText(selectedCustomer.getZip());
+			this.guiCustomerAdministration.getTxtCity().setText(selectedCustomer.getCity());
+
+		}
+
+		if (e.getActionCommand().equalsIgnoreCase(TextResources.ACTION_COMMAND_DELETE)) {
+			System.out.println(
+					"Klasse GuiCustomerAdministrationActionListener - Methode actionPerformed() - Verzweigung - Programm beenden");
 
 		}
 
@@ -78,9 +137,9 @@ public class GuiCustomerAdministrationActionListener implements ActionListener {
 			customerList = FileHandler.getInstance().loadCustomerListFromCsvFile();
 
 			System.out.println(customerList.toString());
-			// TODO 7.
+
 			for (Customer c : this.customerList) {
-				this.guiCustomerAdminstration.getUiCustomerList().add(c.getFullName());
+				this.guiCustomerAdministration.getUiCustomerList().add(c.getFullName());
 			}
 		}
 
@@ -92,11 +151,20 @@ public class GuiCustomerAdministrationActionListener implements ActionListener {
 			if (exitDialogResult == JOptionPane.OK_OPTION) {
 				System.exit(0);
 			}
+			// TODO Ausgelesener selektierter Index (indexOfCustomerToEdit)
+			// wird Attribut (blau und bezeichnet EIGESCHAFTEN EINER KLASSE)
+
 		}
 
 	}
 
+	private void logCustomerActionMessage(Customer customer, ECustomerActions editCustomer) {
+		// TODO Auto-generated method stub
+
+	}
 	// endregion
+
+	// region 4. Customer Actions
 	/**
 	 * Liest alle Eingabedaten aus den Textfeldern<br>
 	 * der Gui aus. Checkt ob diese richtig befuellt worden<br>
@@ -109,13 +177,13 @@ public class GuiCustomerAdministrationActionListener implements ActionListener {
 	private Customer getCheckedCustomerDataFromUi() {
 		Customer customer = null;
 
-		String firstName = this.guiCustomerAdminstration.getTxtCustomerFirstName().getText();
-		String lastName = this.guiCustomerAdminstration.getTxtCustomerLastName().getText();
-		String bday = this.guiCustomerAdminstration.getTxtCustomerBday().getText();
-		String street = this.guiCustomerAdminstration.getTxtStreet().getText();
-		String houseNumber = this.guiCustomerAdminstration.getTxtHouseNumber().getText();
-		String zip = this.guiCustomerAdminstration.getTxtZip().getText();
-		String city = this.guiCustomerAdminstration.getTxtCity().getText();
+		String firstName = this.guiCustomerAdministration.getTxtCustomerFirstName().getText();
+		String lastName = this.guiCustomerAdministration.getTxtCustomerLastName().getText();
+		String bday = this.guiCustomerAdministration.getTxtCustomerBday().getText();
+		String street = this.guiCustomerAdministration.getTxtStreet().getText();
+		String houseNumber = this.guiCustomerAdministration.getTxtHouseNumber().getText();
+		String zip = this.guiCustomerAdministration.getTxtZip().getText();
+		String city = this.guiCustomerAdministration.getTxtCity().getText();
 
 		boolean userInputIsValid = true;
 
@@ -136,4 +204,38 @@ public class GuiCustomerAdministrationActionListener implements ActionListener {
 		return customer;
 	}
 
+	private void updateUiCustomerLists() {
+		// endregion
+
+		// 5. Liste aus Datei per FileHandler auslesen
+		List<Customer> customersFromCsvFile = FileHandler.getInstance().loadCustomerListFromCsvFile();
+
+		// 6. Zuweisen des Attributes customerList oder neu generierung
+		if ((!customersFromCsvFile.isEmpty()) && (customersFromCsvFile != null)) {
+			this.customerList = customersFromCsvFile;
+			
+			this.guiCustomerAdministration.getUiCustomerList().removeAll();
+			
+			for (Customer c : this.customerList) {
+				this.guiCustomerAdministration.getUiCustomerList().add(c.getFullName());
+			}
+
+		} else {
+			this.customerList = new ArrayList<>();
+		}
+	}
+
+	/**
+	 * Weisst allen Textfeldern einen Leerstring zu
+	 */
+	private void clearTextFields() {
+		this.guiCustomerAdministration.getTxtCustomerFirstName().setText("");
+		this.guiCustomerAdministration.getTxtCustomerLastName().setText("");
+		this.guiCustomerAdministration.getTxtCustomerBday().setText("");
+		this.guiCustomerAdministration.getTxtStreet().setText("");
+		this.guiCustomerAdministration.getTxtHouseNumber().setText("");
+		this.guiCustomerAdministration.getTxtZip().setText("");
+		this.guiCustomerAdministration.getTxtCity().setText("");
+
+	}
 }

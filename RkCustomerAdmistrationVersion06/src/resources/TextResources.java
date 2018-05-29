@@ -14,7 +14,7 @@ package resources;
  * 
  * Diese sind als oeffentliche Konstanten hinterlegt<br>
  * 
- * @author Alfa-Dozent :)
+ * @author Alfa-Dozent
  *
  */
 public final class TextResources {
@@ -32,21 +32,19 @@ public final class TextResources {
 	public static final String	BIRTHDAY_TEXT							= "Birthday:";
 	public static final String	SAVED_TEXT								= "Saved";
 	public static final String	FILL_IN_TEXT							= "Fill in";
-	public static final String	STREET_TEXT								= "Street:";
-	public static final String	HOUSE_NUMBER_TEXT						= "HouseNumber:";
+	public static final String	STREET_TEXT								= "Straﬂe:";
+	public static final String	HOUSE_NUMBER_TEXT						= "House number:";
 	public static final String	ZIP_TEXT								= "ZIP:";
 	public static final String	CITY_TEXT								= "City:";
+
 
 	public static final String	USER_MSG_SAVED_CUSTOMER_SUCCESSFULLY	= "Saved Customer succesfully";
 	public static final String	USER_MSG_FILL_IN_CUSTOMER_DATA			= "Please fill in customer data";
 	public static final String	USER_MSG_EXIT_APPLICATION				= "Do you want to exit the application?";
-	public static final String	USER_MSG_UPDATED_CUSTOMER_SUCCESSFULLY		= "Edited Customer successfully";
 
 	public static final String	ACTION_COMMAND_SAVE_CUSTOMER			= "actionCommandSaveCustomer";
 	public static final String	ACTION_COMMAND_SHOW_ALL_CUSTOMERS		= "actionCommandShowAllCustomers";
 	public static final String	ACTION_COMMAND_EXIT						= "actionCommandExit";
-	public static final String	ACTION_COMMAND_EDIT						= "actionCommandEdit";
-	public static final String	ACTION_COMMAND_DELETE					= "actionCommandDelete";
 	
 
 	/**

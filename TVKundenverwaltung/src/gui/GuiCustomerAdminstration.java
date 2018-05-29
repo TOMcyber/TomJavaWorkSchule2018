@@ -237,5 +237,10 @@ public class GuiCustomerAdminstration { // Methode
 	public java.awt.List getUiCustomerList() {
 		return uiCustomerList;
 	}
+	// hier gehts dann wohl eines Tages weiter....
+	
+	
+	// endregion
 
 }
+	
