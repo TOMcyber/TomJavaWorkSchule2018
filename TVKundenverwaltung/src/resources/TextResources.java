@@ -41,12 +41,14 @@ public final class TextResources {
 	public static final String	USER_MSG_FILL_IN_CUSTOMER_DATA			= "Please fill in customer data";
 	public static final String	USER_MSG_EXIT_APPLICATION				= "Do you want to exit the application?";
 	public static final String	USER_MSG_UPDATED_CUSTOMER_SUCCESSFULLY		= "Edited Customer successfully";
-
+	public static final String USER_MSG_DELETE_CUSTOMER 			= "Deleted Customer successfully";
+	
 	public static final String	ACTION_COMMAND_SAVE_CUSTOMER			= "actionCommandSaveCustomer";
 	public static final String	ACTION_COMMAND_SHOW_ALL_CUSTOMERS		= "actionCommandShowAllCustomers";
 	public static final String	ACTION_COMMAND_EXIT						= "actionCommandExit";
 	public static final String	ACTION_COMMAND_EDIT						= "actionCommandEdit";
 	public static final String	ACTION_COMMAND_DELETE					= "actionCommandDelete";
+
 	
 
 	/**

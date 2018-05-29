@@ -9,6 +9,7 @@ import javax.swing.JOptionPane;
 
 import gui.GuiCustomerAdminstration;
 import helper.DateHelper;
+import logic.GuiCustomerAdministrationActionListener.ECustomerActions;
 import models.Customer;
 import resources.TextResources;
 
@@ -124,12 +125,46 @@ public class GuiCustomerAdministrationActionListener implements ActionListener {
 		}
 
 		if (e.getActionCommand().equalsIgnoreCase(TextResources.ACTION_COMMAND_DELETE)) {
-			System.out.println(
-					"Klasse GuiCustomerAdministrationActionListener - Methode actionPerformed() - Verzweigung - Programm beenden");
+			
+		}
+			
+  // TODO Löschen implementieren
+			
+			/**
+			 * Loeschen
+			 */
+			
+		private void deleteCustomer() {   // Löschmethode
+			
+			if ((!this.customerList.isEmpty()) && (isItemSelectedInUiCustomerList())) {
 
+				Customer customerToDelete;
+				int deleteDialogResult = JOptionPane.showConfirmDialog(null,
+						TextResources.USER_MSG_DELETE_CUSTOMER + customerToDelete.getFullName());
+				if (deleteDialogResult == JOptionPane.OK_OPTION
+						) {
+					
+					logCustomerActionMessage(customerToDelete, ECustomerActions.DELETE_CUSTOMER);
+
+					
+					Object indexOfCustomerToDelete;
+					this.customerList.remove(indexOfCustomerToDelete);
+
+					FileHandler.getInstance().saveCustomerListInCsvFile(this.customerList);
+				}
+
+				updateUiCustomerLists();	
+		}
+			
+			
 		}
 
-		if (e.getActionCommand().equalsIgnoreCase(TextResources.ACTION_COMMAND_SHOW_ALL_CUSTOMERS)) {
+		if (e.getActionCommand().equalsIgnoreCase(TextResources.ACTION_COMMAND_SHOW_ALL_CUSTOMERS)) boolean isItemSelectedInUiCustomerList() {
+				// TODO Auto-generated method stub
+				return false;
+			}
+
+		{
 			System.out.println(
 					"Klasse GuiCustomerAdministrationActionListener - Methode actionPerformed() - Verzweigung - Alle Kunden ausgeben:");
 
@@ -142,7 +177,8 @@ public class GuiCustomerAdministrationActionListener implements ActionListener {
 				this.guiCustomerAdministration.getUiCustomerList().add(c.getFullName());
 			}
 		}
-
+	
+	
 		if (e.getActionCommand().equalsIgnoreCase(TextResources.ACTION_COMMAND_EXIT)) {
 			System.out.println(
 					"Klasse GuiCustomerAdministrationActionListener - Methode actionPerformed() - Verzweigung - Programm beenden");
@@ -156,6 +192,11 @@ public class GuiCustomerAdministrationActionListener implements ActionListener {
 
 		}
 
+	}
+
+	private boolean isItemSelectedInUiCustomerList() {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 	private void logCustomerActionMessage(Customer customer, ECustomerActions editCustomer) {
