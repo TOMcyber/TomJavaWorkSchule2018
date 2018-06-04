@@ -59,7 +59,7 @@ public class GuiCustomerAdministration {
 	private JTextField								txtCustomerCity;
 
 	// TODO 1. java.awt.Liste deklarieren
-	private java.awt.List							uiCustomerList;
+	private java.awt.List							guiCustomerList;
 
 	private GuiCustomerAdministrationActionListener	guiCustomerAdminstrationActionListener;
 	// endregion
@@ -123,7 +123,7 @@ public class GuiCustomerAdministration {
 		// TODO 2. java.awt.Liste instzanziieren mit einer Standardgroesse von 2.
 		// TODO 2.1 Standard Groesse in der Klasse IntegerResources als Konstante
 		// erstellen und hier nutzen
-		this.uiCustomerList = new java.awt.List(IntegerResources.DEFAULT_UI_LIST_SIZE);
+		this.GuiCustomerList = new java.awt.List(IntegerResources.DEFAULT_UI_LIST_SIZE);
 
 	}
 
