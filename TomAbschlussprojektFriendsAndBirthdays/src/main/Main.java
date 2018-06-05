@@ -8,11 +8,7 @@ import gui.GuiFriendsAdministartion;
  * die App FriendsAndBirthdays<br>
  * @author Thomas Vollmer<br>
  *
- */
-
-
-
-
+ **/
 
 
 public class Main {								// Anfang Main
@@ -20,7 +16,7 @@ public class Main {								// Anfang Main
 	public static void main(String[] args) {		// K1 
 		System.out.println("Hello World");
 		
-		guiFriendsAdministartion.openGuiFriendsAdministartion();
+//		guiFriendsAdministartion.openGuiFriendsAdministartion();
 		
 		
 		

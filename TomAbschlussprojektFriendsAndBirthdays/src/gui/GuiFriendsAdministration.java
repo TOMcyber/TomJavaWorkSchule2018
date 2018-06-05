@@ -21,7 +21,7 @@ import resources.TextResources;
  * Nimmt die Eigabedaten<br>
  * eines {@link Friends} entgegen<br>
  * und leitet das Speichern in einer CSV-Datei ein.<br>
- * Liest dire Daten bei Bedarf wieder aus.<br>
+ * Liest Ihre Daten bei Bedarf wieder aus.<br>
  * 
  * @author Thomas Vollmer<br>
  *
@@ -47,7 +47,7 @@ public class GuiFriendsAdministration {
 	
 	// TODO 2. java.awt.Liste deklarieren
 	
-	private java.awt.Liste							guiFriendsListe;
+	//private java.awt.Liste							guiFriendsListe;
 	
 	private GuiFriendsAdministrationActionListener guiFriendsAdministartionActionListener;
 	// EndRegion
@@ -91,4 +91,5 @@ public class GuiFriendsAdministration {
 		
 		
 	}
+
 }
