@@ -31,7 +31,7 @@ public final class TextResources {
 	public static final String	BIRTHDAY_TEXT							= "Birthday:";
 	public static final String	SAVED_TEXT								= "Saved";
 	public static final String	FILL_IN_TEXT							= "Fill in";
-	public static final String	STREET_TEXT								= "Straﬂe:";
+	public static final String	STREET_TEXT								= "Stra√üe:";
 	public static final String	HOUSE_NUMBER_TEXT						= "House number:";
 	public static final String	ZIP_TEXT								= "ZIP:";
 	public static final String	CITY_TEXT								= "City:";

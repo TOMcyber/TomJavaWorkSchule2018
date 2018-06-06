@@ -1,6 +1,6 @@
 package main;
 
-import gui.GuiFriendsAdministartion;
+import gui.GuiFriendsAdministration;
 
 /**
  * 
@@ -13,20 +13,23 @@ import gui.GuiFriendsAdministartion;
 
 public class Main {								// Anfang Main
 	
-	public static void main(String[] args) {		// K1 
+	public static void main(String[] args) {		// K1 Anfang
 		System.out.println("Hello World");
+		System.out.println("Klasse Main Methode main()");
 		
-//		guiFriendsAdministartion.openGuiFriendsAdministartion();
-		
-		
-		
-		
-		
+		GuiFriendsAdministration guiCustomerAdministration = new GuiFriendsAdministration();
+				
+		guiCustomerAdministration.openGuiFriendAdministration();
 		
 		
 		
 		
 		
-	}												// K1
+		
+		
+		
+		
+		
+	}												// K1 Ende
 
 }													// Ende Main
