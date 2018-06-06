@@ -1,5 +1,5 @@
 // Meine GUI
-
+// Hier spring ich von der Main aus rein.
 /**
  * Nimmt die Eigabedaten<br>
  * eines {@link Friends} entgegen<br>
@@ -13,6 +13,7 @@
 package gui;
 
 import java.awt.GridLayout;
+import java.awt.event.ActionListener;
 import java.util.List;
 
 import javax.swing.JButton;
@@ -45,13 +46,6 @@ public class GuiFriendsAdministration {
 	private JFrame									mainWindow;
 	private GridLayout								mainWindowLayout;
 
-	private JButton									btnSaveCustomer;
-	private JButton									btnShowAllCustomers;
-
-	// TODO 8. Neue Buttons Edit und Delete deklerarieren generieren einfuegen im
-	// MainWindow
-	private JButton									btnEditFriend;
-	private JButton									btnDeleteFriend;
 	private JButton									btnExit;
 
 	private JLabel									lblFirstName;
@@ -62,19 +56,20 @@ public class GuiFriendsAdministration {
 	private JLabel									lblZip;
 	private JLabel									lblCity;
 
-	private JTextField								txtFriendFirstName;
-	private JTextField								txtFriendLastName;
-	private JTextField								txtFriendBday;
-	private JTextField								txtFriendStreet;
-	private JTextField								txtFriendHouseNumber;
-	private JTextField								txtFriendZip;
-	private JTextField								txtFriendCity;
-
-	// TODO 1. java.awt.Liste deklarieren
-	private java.awt.List							guiFriendsList;
-
 	private GuiFriendsAdministrationActionListener	guiFriendsAdminstrationActionListener;
 	// endregion
+	private JButton btnDeleteFriends;
+	private JButton btnEditFriends;
+	private JButton btnShowAllFriends;
+	private JButton btnSaveFriends;
+	private JTextField txtFriendsFirstName;
+	private JTextField txtFriendsLastName;
+	private JTextField txtFriendsBday;
+	private JTextField txtFriendsStreet;
+	private JTextField txtFriendsHouseNumber;
+	private JTextField txtFriendsZip;
+	private JTextField txtFriendsCity;
+	private java.awt.List GuiCustomerList;
 
 	// region 3. Oeffnen der GUI
 
@@ -218,7 +213,7 @@ public class GuiFriendsAdministration {
 	}
 
 	private void addActionListenerToButtons() {
-		this.btnSaveFriends.addActionListener(this.guiFriendsAdminstrationActionListener);
+		this.btnSaveFriends.addActionListener((ActionListener) this.guiFriendsAdminstrationActionListener);
 		this.btnShowAllFriends.addActionListener(this.guiFriendsAdminstrationActionListener);
 		this.btnEditFriends.addActionListener(this.guiFriendsAdminstrationActionListener);
 		this.btnDeleteFriends.addActionListener(this.guiFriendsAdminstrationActionListener);
@@ -257,8 +252,14 @@ public class GuiFriendsAdministration {
 	}
 
 	public java.awt.List getUiFriendsList() {
-		return uiFriendsList;
+		return getUiFriendsList();
 	}
+
+	
+		
+	}
+
+	
 
 	// endregion
 }

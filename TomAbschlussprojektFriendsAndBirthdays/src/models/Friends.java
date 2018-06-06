@@ -1,6 +1,6 @@
 package models;
 
-public class Friends {
+public class Friends {             // K1 Start
 
 	/**
 	 * Modelklassen haben<br>
@@ -52,7 +52,7 @@ public class Friends {
 		/**
 		 * Standard Konstruktor zum initalisieren der Attribute
 		 */
-		public Friends() {
+		public Friends() {										// K2 Start
 			this.firstName = DEFAULT_VALUE_STRING;
 			this.lastName = DEFAULT_VALUE_STRING;
 			this.bday = DEFAULT_VALUE_STRING;
@@ -61,17 +61,17 @@ public class Friends {
 			this.houseNumber = DEFAULT_VALUE_STRING;
 			this.zip = DEFAULT_VALUE_STRING;
 			this.city = DEFAULT_VALUE_STRING;
-		}
+		}														// K2 Ende
 
 		/**
 		 * 1. Ueberladener Konstruktor zum direkten initalisieren der Attribute bei
 		 * Generierung
 		 */
-		public Friends(String firstName, String lastName, String bday) {
+		public Friends(String firstName, String lastName, String bday) {      // K3 Start
 			this.firstName = firstName;
 			this.lastName = lastName;
 			this.bday = bday;
-		}
+		}																      // K3 Ende
 		// endregion
 
 		// region 3. Getter und Setter
@@ -173,7 +173,7 @@ public class Friends {
 		public String toString() {
 			return "Friends [firstName=" + firstName + ", lastName=" + lastName + ", bday=" + bday + ", street=" + street
 					+ ", houseNumber=" + houseNumber + ", zip=" + zip + ", city=" + city + "]";
-		}
+				}
 
 
 
@@ -185,9 +185,11 @@ public class Friends {
 	
 	
 	
-	public String getAllAttributsAsCsvString() {
+//	public String getAllAttributsAsCsvString() {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	}
+	}    // K1 Ende
 
-}
+

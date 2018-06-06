@@ -3,7 +3,8 @@ package main;
 import gui.GuiFriendsAdministration;
 
 /**
- * 
+ * ABSCHLUSSPROJEKT - TomAbschlussprojektFriendsAndBirthdays
+ *     
  * Einstiegspunkt in<br>
  * die App FriendsAndBirthdays<br>
  * @author Thomas Vollmer<br>
@@ -17,9 +18,11 @@ public class Main {								// Anfang Main
 		System.out.println("Hello World");
 		System.out.println("Klasse Main Methode main()");
 		
-		GuiFriendsAdministration guiCustomerAdministration = new GuiFriendsAdministration();
-				
-		guiCustomerAdministration.openGuiFriendAdministration();
+			GuiFriendsAdministration guiFriendsAdministration = new GuiFriendsAdministration();
+			
+			guiFriendsAdministration.openGuiFriendAdministration();
+			
+
 		
 		
 		

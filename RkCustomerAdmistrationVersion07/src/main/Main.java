@@ -3,7 +3,7 @@ package main;
 import gui.GuiCustomerAdministration;
 
 /**
- * 
+ *
  * Einstiegspunkt in<br>
  * die Kundenverwaltung
  * @author Alfa-Dozent
