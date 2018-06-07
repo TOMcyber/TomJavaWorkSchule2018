@@ -123,7 +123,7 @@ public class GuiCustomerAdministration {
 		// TODO 2. java.awt.Liste instzanziieren mit einer Standardgroesse von 2.
 		// TODO 2.1 Standard Groesse in der Klasse IntegerResources als Konstante
 		// erstellen und hier nutzen
-		this.GuiCustomerList = new java.awt.List(IntegerResources.DEFAULT_UI_LIST_SIZE);
+		this.guiCustomerList = new java.awt.List(IntegerResources.DEFAULT_UI_LIST_SIZE);
 
 	}
 
@@ -189,8 +189,8 @@ public class GuiCustomerAdministration {
 		this.mainWindow.add(this.lblCity);
 		this.mainWindow.add(this.txtCustomerCity);
 
-		// TODO 3. java.awt.List uiCustomerList dem mainWindow hinzufuegen
-		this.mainWindow.add(this.uiCustomerList);
+		// TODO 3. java.awt.List GuiCustomerList dem mainWindow hinzufuegen
+		FriendsAdministration
 	}
 
 	private void generateActionListener() {
@@ -244,8 +244,8 @@ public class GuiCustomerAdministration {
 		return txtCustomerCity;
 	}
 
-	public java.awt.List getUiCustomerList() {
-		return uiCustomerList;
+	public java.awt.List getGiCustomerList() {
+		return guiCustomerList;
 	}
 
 	// endregion

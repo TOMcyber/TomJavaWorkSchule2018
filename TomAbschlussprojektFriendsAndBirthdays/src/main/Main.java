@@ -12,9 +12,9 @@ import gui.GuiFriendsAdministration;
  **/
 
 
-public class Main {								// Anfang Main
+public class Main {								// Anfang Klasse Main
 	
-	public static void main(String[] args) {		// K1 Anfang
+	public static void main(String[] args) {		// M1 Anfang
 		System.out.println("Hello World");
 		System.out.println("Klasse Main Methode main()");
 		
@@ -33,6 +33,6 @@ public class Main {								// Anfang Main
 		
 		
 		
-	}												// K1 Ende
+	}												// M1 Ende
 
-}													// Ende Main
+}													// Ende Klasse Main

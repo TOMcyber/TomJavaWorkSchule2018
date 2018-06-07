@@ -2,16 +2,20 @@ package main;
 
 import gui.GuiFriendsAdministration;
 
-//	ABSCHLUSSPROJEKT - TomAbschlussprojektFriendsAndBirthdays1
+/**
+ * ABSCHLUSSPROJEKT - TomAbschlussprojektFriendsAndBirthdays1
+ *     
+ * Einstiegspunkt in<br>
+ * die App FriendsAndBirthdays<br>
+ * @author Thomas Vollmer<br>
+ *
+ **/
 
 
 
+public class Main {									//  Anfang Klasse Main
 
-
-
-public class Main {									// Anfang Main
-
-	public static void main(String[] args) {			// K1 Anfang
+	public static void main(String[] args) {			// Methode Main1 Anfang
 		// Main Start						
 		System.out.println("Hello World");
 		System.out.println("Klasse Main Methode main()");
@@ -20,9 +24,9 @@ public class Main {									// Anfang Main
 		
 		guiFriendsAdministartion.openGuiFriendsAdministration();
 		
-	}													// K1 Ende
+	}													// Methode Main1 Ende
 		
-}														// Ende Main														
+}														// Ende Klasse Main														
 
 
 
